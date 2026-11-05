@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PM Studio | استودیوی بازی‌سازی</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background: #080b18;
+      color: #f5f6ff;
+      line-height: 1.8;
+    }
+
+    :root {
+      --blue: #00d9ff;
+      --purple: #9b5cff;
+      --card: #11182b;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 8%;
+      background: rgba(8, 11, 24, 0.9);
+      border-bottom: 1px solid #202944;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 900;
+      color: var(--blue);
+      letter-spacing: 2px;
+      text-shadow: 0 0 15px #00d9ff88;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      min-height: 600px;
+      padding: 120px 8%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 15% 30%, #6428a833, transparent 35%),
+        radial-gradient(circle at 85% 60%, #00d9ff22, transparent 35%);
+    }
+
+    .tag {
+      color: var(--blue);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 7vw, 76px);
+      line-height: 1.35;
+      font-weight: 900;
+      max-width: 850px;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+      text-shadow: 0 0 25px #00d9ff55;
+    }
+
+    .hero p {
+      color: #aeb9d5;
+      max-width: 600px;
+      margin: 25px 0 35px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 28px;
+      border-radius: 10px;
+      background: linear-gradient(100deg, var(--blue), var(--purple));
+      color: #080b18;
+      font-weight: 900;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 25px #00d9ff66;
+    }
+
+    section {
+      padding: 85px 8%;
+    }
+
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .section-description {
+      color: #9ba8c5;
+      margin-bottom: 35px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid #263453;
+      border-radius: 18px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--blue);
+      box-shadow: 0 10px 35px #00d9ff16;
+    }
+
+    .project-image {
+      height: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 65px;
+      background: linear-gradient(135deg, #142b50, #38205e);
+    }
+
+    .project-content {
+      padding: 24px;
+    }
+
+    .project-content h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .project-content p {
+      color: #aeb9d5;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .status {
+      display: inline-block;
+      font-size: 12px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      background: #00d9ff18;
+      color: var(--blue);
+      border: 1px solid #00d9ff55;
+    }
+
+    .about {
+      background: #0d1324;
+    }
+
+    .about-box {
+      max-width: 800px;
+      padding: 35px;
+      background: var(--card);
+      border: 1px solid #293653;
+      border-radius: 18px;
+    }
+
+    .about-box p {
+      color: #b8c2dc;
+      margin-top: 15px;
+    }
+
+    .engine {
+      display: inline-block;
+      margin-top: 20px;
+      color: var(--blue);
+      border: 1px solid #00d9ff66;
+      padding: 7px 16px;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      color: #8793ae;
+      border-top: 1px solid #202944;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        min-height: 500px;
+        padding-top: 80px;
+      }
+
+      section {
+        padding: 60px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="#" class="logo">PM STUDIO</a>
+
+    <nav>
+      <a href="#home">خانه</a>
+      <a href="#projects">پروژه‌ها</a>
+      <a href="#about">درباره ما</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="tag">INDEPENDENT GAME DEVELOPMENT STUDIO</div>
+
+      <h1>
+        به دنیای<br>
+        <span>PM Studio</span><br>
+        خوش اومدی!
+      </h1>
+
+      <p>
+        ما در PM Studio دنیای بازی‌ها را با ایده‌های خلاقانه،
+        تجربه‌های تازه و تکنولوژی می‌سازیم.
+      </p>
+
+      <div>
+        <a href="#projects" class="button">مشاهده پروژه‌ها</a>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">پروژه‌های ما</h2>
+      <p class="section-description">
+        نگاهی به بازی‌هایی که در PM Studio توسعه می‌دهیم.
+      </p>
+
+      <div class="projects">
+
+        <article class="project-card">
+          <div class="project-image">🚀</div>
+
+          <div class="project-content">
+            <span class="status">در حال توسعه</span>
+            <h3>Sky Shooter</h3>
+
+            <p>
+              یک بازی سه‌بعدی تیراندازی با فضایی هیجان‌انگیز
+              که هم‌اکنون در دست توسعه است.
+            </p>
+
+            <p>ژانر: تیراندازی · پلتفرم: PC · 3D</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">🏃</div>
+
+          <div class="project-content">
+            <span class="status">نمونه اولیه</span>
+            <h3>Parkour Platformer</h3>
+
+            <p>
+              یک بازی دوبعدی پارکور و سکوبازی با تمرکز
+              بر حرکت، پرش و عبور از موانع.
+            </p>
+
+            <p>ژانر: پلتفرمر · پلتفرم: PC · 2D</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <h2 class="section-title">درباره PM Studio</h2>
+
+      <div class="about-box">
+        <h3>یک استودیوی مستقل بازی‌سازی</h3>
+
+        <p>
+          PM Studio یک استودیوی مستقل و تک‌نفره است
+          که با هدف ساخت بازی‌های خلاقانه فعالیت می‌کند.
+          تمرکز ما روی یادگیری، نوآوری و ساخت تجربه‌های
+          سرگرم‌کننده برای بازیکنان است.
+        </p>
+
+        <span class="engine">Powered by Godot Engine</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 PM Studio — تمامی حقوق محفوظ است.</p>
+    <p>ساخته‌شده با علاقه به بازی‌سازی 🎮</p>
+  </footer>
+
+</body>
+</html>
